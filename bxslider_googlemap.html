@@ -1,0 +1,103 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- 새로운 라이트박스 파일이면 위에서 선언. 예전 lightbox.css면 위치 상관없음 -->
+  <!-- <script src="./js/lightbox-plus-jquery.min.js"> </script>   -->
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script src="./js/lightbox.js"> </script>
+  <link rel="stylesheet" href="./css/lightbox.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script>
+    $(document).ready(function(){
+        $('.bxslider').bxSlider({
+            auto: true,
+            autoControls: true,
+            stopAutoOnClick: true,
+            pager: true,
+            slideWidth: 1000
+        });
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+    });
+  </script>
+  <!-- 구글 맵 API키 -->
+  <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDm43Ot9ckqLcQ_SwBmfjVIVx3GXPAnC4A&callback=initMap" async defer>
+  </script>
+  <style>
+      body {
+          width: 1000px;
+          margin: 0 auto;
+      }
+      div.bx-controls-auto, div.bx-pager  {
+          display: none;
+      }
+      div.light{
+          text-align: center;
+      }
+      a.lb img{
+          width: 200px;
+      }
+      div#map{
+          /* 구글 맵 사이즈 */
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+      }
+  </style>
+</head>
+<body>
+    <div class="bxslider">
+        <div><img src="imgs//0823.jpg"></div>
+        <div><img src="imgs/0824.jpg"></div>
+        <div><img src="imgs/0825.jpg"></div>
+        <div><img src="imgs/0826.jpg"></div>
+        <div><img src="imgs/0827.jpg"></div>
+        <div><img src="imgs/0828.jpg"></div>
+        <div><img src="imgs/0907.jpg"></div>
+        <div><img src="imgs/0908.jpg"></div>
+        <div><img src="imgs/0910.jpg"></div>
+        <div><img src="imgs/0913.jpg"></div>
+        <div><img src="imgs/0914.jpg"></div>
+        <div><img src="imgs/0915.jpg"></div>
+        <div><img src="imgs/0917.jpg"></div>
+        <div><img src="imgs/0923.jpg"></div>
+        <div><img src="imgs/0924.jpg"></div>
+    </div>
+    <div class="light">
+        <a class="lb" href="./imgs/cat.jpg" data-lightbox="roadtrip"><img src="./imgs/cat.jpg" alt=""></a>
+        <a class="lb" href="./imgs/dog.jpg" data-lightbox="roadtrip"><img src="./imgs/dog.jpg" alt=""></a>
+        <a class="lb" href="./imgs/wildlife.png" data-lightbox="roadtrip"><img src="./imgs/wildlife.png" alt=""></a>
+
+    </div>
+    <!-- 구글지도 -->
+    <div id="map">
+    </div>
+    <script>
+        //구글 지도
+        let map;
+        let image;
+        let marker;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+            // 37.54629139592949, 126.88069030593695
+            center: { lat: 37.54629139592949, lng: 126.88069030593695 }, //위도 경도
+            zoom: 16 //숫자클수록 지도가 자세히보임(zoom in:큰숫자, zoom out:작은숫자)
+            });
+            image = new google.maps.MarkerImage('http://www.larva.re.kr/home/img/boximage3.png',
+            new google.maps.Size(100, 100),
+            '',
+            '',
+            new google.maps.Size(100, 100));
+            marker = new google.maps.Marker({
+            // 마커가 위치할 위도와 경도(변수)
+            position: { lat: 37.54629139592949, lng: 126.88069030593695 },
+            map: map,
+            icon: image, // 마커로 사용할 이미지(변수)
+            title: 'RAPA' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+            });
+        }
+    </script>
+</body>
+</html>

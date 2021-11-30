@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link href="./css/lightbox.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="./js/lightbox.js"></script>
+  
+    <script>
+      $(document).ready(function(){
+        $('.bxslider').bxSlider({
+            auto: true,
+            autoControls: true,
+            stopAutoOnClick: true,
+            pager: true,
+            slideWidth: 1200
+        });
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+      });
+    </script>
+    <style>
+        body {
+            width: 1400px;
+            margin: 0 auto;
+    
+        }
+        a.lb img{
+            width: 200px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="light">
+        <a class="lb" data-lightbox="roadtrip" href="imgs/cat.jpg" ><img src="imgs/cat.jpg" alt=""></a>
+        <a class="lb" data-lightbox="roadtrip" href="imgs/dog.jpg" ><img src="imgs/dog.jpg" alt=""></a>
+        <a class="lb" data-lightbox="roadtrip" href="imgs/wildlife.png" ><img src="imgs/wildlife.png" alt=""></a>
+    </div>
+    
+</body>
+</html>

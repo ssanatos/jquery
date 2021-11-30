@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link href="path/to/lightbox.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="path/to/lightbox.js"></script>
+    <!-- 헤드에 제이쿼리 라이브러리를 가져와서 작성 -->
+
+    <script>
+      $(document).ready(function(){
+        $('.bxslider').bxSlider({
+            auto: true,
+            autoControls: true,
+            stopAutoOnClick: true,
+            pager: true,
+            slideWidth: 1200
+        });
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+      });
+    </script>
+    <style>
+        body {
+            width: 1400px;
+            margin: 0 auto;
+    
+        }
+        /* 밑에 있는 넘겨지는 버튼 가리기. 보이게 하려면 밑의 코드 삭제 */
+        /* div.bx-controls-auto{
+            display: none;
+        }
+        div.bx-pager{
+            display: none;
+        } */
+    </style>
+
+</head>
+<body>
+    <!-- 기존에 웹에 있는 슬라이드 코드 갖다 붙여넣기 하고 이미지나 사이즈나 위치따위 약간만 수정하면되. -->
+    <!-- https://bxslider.com/examples/auto-show-start-stop-controls/ -->
+    <!-- 구글에 jquery 플러그인 검색하면 자료 많이 나온다. -->
+    <div class="bxslider">
+        <div><img src="imgs//0823.jpg"></div>
+        <div><img src="imgs/0824.jpg"></div>
+        <div><img src="imgs/0825.jpg"></div>
+        <div><img src="imgs/0826.jpg"></div>
+        <div><img src="imgs/0827.jpg"></div>
+        <div><img src="imgs/0828.jpg"></div>
+        <div><img src="imgs/0907.jpg"></div>
+        <div><img src="imgs/0908.jpg"></div>
+        <div><img src="imgs/0910.jpg"></div>
+        <div><img src="imgs/0913.jpg"></div>
+        <div><img src="imgs/0914.jpg"></div>
+        <div><img src="imgs/0915.jpg"></div>
+        <div><img src="imgs/0917.jpg"></div>
+        <div><img src="imgs/0923.jpg"></div>
+        <div><img src="imgs/0924.jpg"></div>
+    </div>
+
+    <div class="light">
+        <a href="imgs/cat.jpg" data-lightbox="roadtrip">Image #2</a>
+        <a href="imgs/dog.jpg" data-lightbox="roadtrip">Image #3</a>
+        <a href="imgs/wildlife.png" data-lightbox="roadtrip">Image #4</a>
+        <!-- a[href][data-lightbox] 치고 엔터치면 바로 포멧 작성됨 -->
+    </div>
+    
+</body>
+</html>
